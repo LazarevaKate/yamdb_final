@@ -59,14 +59,14 @@ build_and_push_to_docker_hub:
           tags:
             ${{ secrets.DOCKER_USERNAME }}/yamdb_final_web:latest
       - name: Message if build_and_push_to_docker_hub failed
-          if:  ${{ failure() }}
-          uses: appleboy/telegram-action@master
-          with:
-            to: ${{ secrets.TELEGRAM_TO }}
-            token: ${{ secrets.TELEGRAM_TOKEN }}
-            message: |
-              Ошибка сборки образа на DockerHub  - ${{ github.repository }}
-              https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        if:  ${{ failure() }}
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            Ошибка сборки образа на DockerHub  - ${{ github.repository }}
+            https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
 deploy:
     name: Deploy
