@@ -20,22 +20,22 @@ jobs:
         pip install -r api_yamdb/requirements.txt 
 
     - name: Test with flake8 and django tests
-        run: |
-          python -m flake8
+      run: |
+        python -m flake8
     - name: Pytest
-        run: |
-          pytest
+      run: |
+        pytest
     - name: Test-failed message
-        if:  ${{ failure() }}
-        uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: |
-            ${{ steps.run_test.outcome }}
-            ${{ steps.run_test.conclusion }}
-            Ошибка при тестировании - ${{ github.repository }}
-            https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+      if:  ${{ failure() }}
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.TELEGRAM_TO }}
+        token: ${{ secrets.TELEGRAM_TOKEN }}
+        message: |
+          ${{ steps.run_test.outcome }}
+          ${{ steps.run_test.conclusion }}
+          Ошибка при тестировании - ${{ github.repository }}
+          https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
 build_and_push_to_docker_hub:
     name: Push Docker image to Docker Hub
