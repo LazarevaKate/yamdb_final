@@ -1,6 +1,5 @@
-from rest_framework import serializers
 from django.utils import timezone
-
+from rest_framework import serializers
 from reviews.models import Comment, Review, Category, Genre, Title
 
 
