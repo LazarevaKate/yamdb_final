@@ -67,7 +67,6 @@ build_and_push_to_docker_hub:
             https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
 deploy:
-    name: Deploy
     runs-on: ubuntu-latest
     needs: build_and_push_to_docker_hub
     steps:
