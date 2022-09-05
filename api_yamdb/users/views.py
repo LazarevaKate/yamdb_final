@@ -8,8 +8,8 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
 
-from api_yamdb import settings
 from api.permissions import IsAdmin
+from api_yamdb import settings
 from .models import User
 from .serializers import (
     SignUpSerializer, UserSerializer, GetTokenSerializer
