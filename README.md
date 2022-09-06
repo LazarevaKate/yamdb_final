@@ -1,9 +1,16 @@
 # api_yamdb
 api_yamdb
 
+https://github.com/LazarevaKate/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg
+
 Опиание проекта.
 
 Проет был создан для практики работы в команде. 
+### Workflow
+tests - проверяет код на соответсвие  PEP8 (с помощью пакета flake8) и запускает pytest. 
+build_and_push_to_docker_hub - Сборка и доставка докер-образов на Docker Hub
+deploy - осуществляет deploy на сервер. Выполняет копирование файлов на сервер.
+send_message - отправляет сообщение в телеграмм. 
 
 ### Запустить проект в контейнере
 
