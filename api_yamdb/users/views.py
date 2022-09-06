@@ -10,10 +10,9 @@ from rest_framework_simplejwt.tokens import RefreshToken
 
 from api.permissions import IsAdmin
 from api_yamdb import settings
+
 from .models import User
-from .serializers import (
-    SignUpSerializer, UserSerializer, GetTokenSerializer
-)
+from .serializers import GetTokenSerializer, SignUpSerializer, UserSerializer
 
 
 class UsersViewSet(viewsets.ModelViewSet):
