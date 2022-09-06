@@ -1,4 +1,4 @@
-name: api_yamdb workflow
+name: Django-app workflow
 
 on: [push]
 
@@ -42,7 +42,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          context: ./api_yamdb/
+          file: ./api_yamdb/Dockerfile
           tags: ${{ secrets.DOCKER_USERNAME }}/yamdb_final_web:latest
       - name: Message if build_and_push_to_docker_hub failed
         if:  ${{ failure() }}
