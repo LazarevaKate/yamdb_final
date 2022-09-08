@@ -1,8 +1,8 @@
+![Build Status](https://github.com/LazarevaKate/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+
 # api_yamdb
 
-api_yamdb
-
-https://github.com/LazarevaKate/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg
+Проект доступен по адресу: http://130.193.40.179/redoc/
 
 Опиание проекта.
 
