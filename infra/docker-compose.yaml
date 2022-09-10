@@ -8,7 +8,7 @@ services:
     env_file:
       - ./.env
   web:
-    image: lazarevaek/yamdb_final:latest
+    image: lazarevaek/api_yamdb:latest
     restart: always
     volumes:
       - static_value:/app/static/
@@ -35,3 +35,4 @@ services:
 volumes:
   static_value:
   media_value:
+  db_value:
