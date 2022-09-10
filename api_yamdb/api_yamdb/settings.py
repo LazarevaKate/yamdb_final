@@ -14,7 +14,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     '*',
     '130.193.40.179',
-    ]
+]
 
 
 INSTALLED_APPS = [
