@@ -31,7 +31,6 @@ services:
     depends_on:
       - web
 
-
 volumes:
   db_value:
   static_value:
