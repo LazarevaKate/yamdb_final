@@ -72,6 +72,7 @@ DATABASES = {
     }
 }
 
+DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
