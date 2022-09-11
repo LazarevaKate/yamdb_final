@@ -60,7 +60,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'api_yamdb.wsgi.application'
 
-DATABASES = {
+DATABASE = {
     'default': {
         'ENGINE': os.getenv('ENGINE', default='django.db.backends.postgresql'),
         'NAME': os.getenv('DB_NAME', default='postgres'),
