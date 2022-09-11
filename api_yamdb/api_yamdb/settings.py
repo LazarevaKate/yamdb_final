@@ -64,10 +64,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'api_yamdb.wsgi.application'
 
+DATABASE_URL = 'postgresql://<postgresql>'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.environ.get('DB_ENGINE', default='django.db.backends.postgresql'),
+        'ENGINE': os.environ.get('DB_ENGINE', default=dj_database_url.config(default=DATABASE_URL)),
         'NAME': os.environ.get('DB_NAME', default='postgres'),
         'USER': os.environ.get('POSTGRES_USER', default='postgres'),
         'PASSWORD': os.environ.get('POSTGRES_PASSWORD', default='postgres'),
@@ -76,7 +77,6 @@ DATABASES = {
     }
 }
 
-DATABASES['default'] = dj_database_url.config()
 
 AUTH_PASSWORD_VALIDATORS = [
     {
