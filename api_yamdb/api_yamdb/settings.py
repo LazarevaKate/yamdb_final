@@ -1,6 +1,7 @@
 import os
 from datetime import timedelta
 
+import dj_database_url
 from dotenv import load_dotenv
 
 load_dotenv('.env')
@@ -74,6 +75,8 @@ DATABASES = {
         'PORT': os.environ.get('DB_PORT', default='5432')
     }
 }
+
+DATABASES['default'] =  dj_database_url.config()
 
 AUTH_PASSWORD_VALIDATORS = [
     {
