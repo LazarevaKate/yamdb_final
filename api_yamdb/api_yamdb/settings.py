@@ -1,6 +1,8 @@
 import os
 from datetime import timedelta
 
+import dj_database_url
+import DATABASES as DATABASES
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -63,10 +65,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'api_yamdb.wsgi.application'
 
+DATABASES['default'] = dj_database_url.config(default='django.db.backends.postgresql')
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.getenv('DB_NAME', default='postgres'),
         'USER': os.getenv('POSTGRES_USER', default='postgres'),
         'PASSWORD': os.getenv('POSTGRES_PASSWORD', default='postgres'),
