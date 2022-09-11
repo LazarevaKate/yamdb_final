@@ -6,7 +6,7 @@ services:
     volumes:
       - db_value:/var/lib/postgresql/data/
     environment:
-      DB_ENGINE: 'django.db.backends.postgresql'
+      ENGINE: 'django.db.backends.postgresql'
       DB_HOST: 'db'
       POSTGRES_HOST_AUTH_METHOD: 'trust'
     env_file:
