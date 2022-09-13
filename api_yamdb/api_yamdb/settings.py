@@ -1,5 +1,6 @@
 import os
 from datetime import timedelta
+from distutils.util import strtobool
 
 from dotenv import load_dotenv
 
@@ -9,7 +10,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
-DEBUG = False
+DEBUG = strtobool(os.getenv('DEBUG', default='False'))
 
 ALLOWED_HOSTS = ['*']
 
@@ -62,7 +63,7 @@ WSGI_APPLICATION = 'api_yamdb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('DB_ENGINE', default='django.db.backends.postgresql'),
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
