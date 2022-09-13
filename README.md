@@ -17,10 +17,10 @@ send_message - отправляет сообщение в телеграмм.
 
 1. Скопировать проект и перейти в корневую директорию:
 ```
-git clone git@github.com:earlinn/infra_sp2.git
-cd infra_sp2
+git clone git@github.com:LazarevaKate/yamdb_final.git
+cd api_yamdb
 ```
-2. Перейдите в папку infra_sp2/infra и создайте там файл .env с переменными окружения, нужными для работы приложения. 
+2. Перейдите в папку api_yamdb/infra и создайте там файл .env с переменными окружения, нужными для работы приложения. 
 ```
 cd infra/
 
