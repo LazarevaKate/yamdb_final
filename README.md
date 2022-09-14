@@ -3,6 +3,7 @@
 # api_yamdb
 
 Проект доступен по адресу: http://158.160.5.188/admin/
+Документация: http://158.160.5.188/redoc/
 
 Опиание проекта.
 
@@ -33,25 +34,23 @@ POSTGRES_PASSWORD=postgres # пароль для подключения к БД 
 DB_HOST=db # название сервиса (контейнера)
 DB_PORT=5432 # порт для подключения к БД 
 ```
-3. Запускаем docker-compose:
-```
-docker-compose up -d
-```
+3. Docker-compose запустится автоматически:
+
 4. Будут созданы и запущены в фоновом режиме необходимые для работы приложения контейнеры (db, web, nginx). Заполнить базу тестовыми файлами можно при помощи команды:
 ```
-docker-compose exec web python manage.py loaddata fixtures.json
+sudo docker compose exec web python manage.py loaddata fixtures.json
 ```
 6. Затем нужно внутри контейнера web выполнить миграции, создать суперпользователя и собрать статику:
 ```
-docker-compose exec web python manage.py migrate
-docker-compose exec web python manage.py createsuperuser
-docker-compose exec web python manage.py collectstatic --no-input 
+sudo docker compose exec web python manage.py migrate
+sudo docker compose exec web python manage.py createsuperuser
+sudo docker compose exec web python manage.py collectstatic --no-input 
 ```
-5. Теперь проект доступен по адресу http://localhost/.
+5. Теперь проект доступен по адресу http:/158.160.5.188/redoc/.
 
 ### В проекте предоставлены следующие возможности:
 
-Подробная документация: http://127.0.0.1:8000/redoc/
+Подробная документация: http://158.160.5.188/redoc/
 
 Просмотр списка объектов:
 
