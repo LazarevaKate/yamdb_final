@@ -7,7 +7,7 @@ load_dotenv('.env')
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = str(os.getenv('SECRET_KEY')) # без str не проходит тест
+SECRET_KEY = str(os.getenv('SECRET_KEY'))  # без str не проходит тест
 
 DEBUG = False
 
