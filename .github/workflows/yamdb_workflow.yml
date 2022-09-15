@@ -58,8 +58,8 @@ jobs:
             https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
   deploy:
     name: Deploy
-    if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
     needs: build_and_push_to_docker_hub
     steps:
       - name: Executing remote ssh commands to deploy
